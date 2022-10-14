@@ -7,3 +7,4 @@ dependencies:
   - pip
   - pip:
     - plotly==5.10.0
+    - ipykernel
