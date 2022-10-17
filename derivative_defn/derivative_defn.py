@@ -23,7 +23,6 @@ def secant_line(f, a, h):
     return m * (x - a) + f(a)
   return l, m
 
-
 def tangent_line(f, a, delta = 1e-6):
   '''
   Compute the function of a tangent line fo the graph of a fuction at a point.
@@ -47,7 +46,6 @@ def tangent_line(f, a, delta = 1e-6):
   def l(x):
     return m * (x - a) + f(a)
   return l, m
-
 
 def make_figure(f, a, x_min, x_max, 
   save_figure = False, filename = "secant_line.html",
@@ -101,10 +99,8 @@ def make_figure(f, a, x_min, x_max,
     ah_color (string): Color of the point (a + h, f(a + h)) (default is "fuchsia").
     secant_line_width (int): Thickness of the tangent line on the plot (default is 2).
     secant_line_color (string): The color of the tangent line on the plot (default is "red").
-    
-
   '''
-  # check that a\in (x_min, x_max)
+  # check that a is in (x_min, x_max)
   if a <= x_min or a >= x_max:
     raise Exception(f"Value a must lie in range (x_min, x_max), got a = {a}, (x_min, x_max) = ({x_min}, {x_max}).")
 
@@ -155,10 +151,9 @@ def make_figure(f, a, x_min, x_max,
   l, m = tangent_line(f, a)
   y0 = l(x_min)
   y1 = l(x_max)
-  fig.add_trace(go.Scatter(x = [x_min, x_max], y = [y0, y1], mode = "lines", name = f"tangent line",
+  fig.add_trace(go.Scatter(x = [x_min, x_max], y = [y0, y1], mode = "lines", name = f"tangent line, slope = {m:.3f}",
     line = {"color" : tangent_line_color, "width" : tangent_line_width},
     visible = tangent_line_visibility, legendrank = 5))
-
 
   # compute hs
   h_min = x_min - a
