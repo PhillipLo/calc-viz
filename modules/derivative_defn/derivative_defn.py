@@ -65,6 +65,7 @@ def make_figure(f, a, x_min, x_max,
   Given a function f, a point a to approximate the derivative, and a range [x_min, x_max] for
     plotting things, generate a plotly plot with an interactive slider. Color-related arguments
     can be supplied as either a hex string (e.g. "#ffffff") or as a CSS named color (e.g. "red"). 
+    
     See https://developer.mozilla.org/en-US/docs/Web/CSS/named-color for a list of CSS named colors.
 
   Args:
