@@ -57,7 +57,8 @@ def make_figure(f, a, x_min, x_max,
   a_size = 10, a_color = "black",
   tangent_line_width = 2, tangent_line_color = "deepskyblue",
   ah_size = 10, ah_color = "fuchsia",
-  secant_line_width = 2, secant_line_color = "red"
+  secant_line_width = 2, secant_line_color = "red",
+  axis_width = 2, axis_color = "lightslategray"
   ):
   '''
   Draw the figure!
@@ -100,6 +101,11 @@ def make_figure(f, a, x_min, x_max,
     ah_color (string): Color of the point (a + h, f(a + h)) (default is "fuchsia").
     secant_line_width (int): Thickness of the tangent line on the plot (default is 2).
     secant_line_color (string): The color of the tangent line on the plot (default is "red").
+    axis_width (float): The width of the cartesian axes (default is 2).
+    axis_color (string): The color of the cartesian axes (default is "lightslategray").
+
+  Returns: 
+    None. Plots or saves figure.
   '''
   # check that a is in (x_min, x_max)
   if a <= x_min or a >= x_max:
@@ -223,6 +229,10 @@ def make_figure(f, a, x_min, x_max,
 
   for i in range(num_h):
     fig['layout']['sliders'][0]['steps'][i]['label']=f"{hs[i]:.3f}"
+
+  # plot x and y axes
+  fig.update_xaxes(zeroline = True, zerolinewidth = axis_width, zerolinecolor = axis_color)
+  fig.update_yaxes(zeroline = True, zerolinewidth = axis_width, zerolinecolor = axis_color)
 
   # save figure or display
   if save_figure:
