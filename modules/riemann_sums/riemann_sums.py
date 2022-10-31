@@ -71,7 +71,8 @@ def make_figure(f, a, b, mode,
   x_margin_ratio = 0.1, y_margin_ratio = 0.1,
   x_dtick = 0.5, y_dtick = 0.5,
   fx_width = 2, fx_color = "black",
-  rect_line_width = 1, rect_pos_color = "blue", rect_neg_color = "red"
+  rect_line_width = 1, rect_pos_color = "blue", rect_neg_color = "red",
+  axis_width = 2, axis_color = "lightslategray"
   ):
   '''
   Draw the figure!
@@ -104,6 +105,8 @@ def make_figure(f, a, b, mode,
     rect_line_width (float): Width of the borders of the rectangles (default is 1).
     rect_pos_color (string): Color of rectangles with positive signed area (default is "blue").
     rect_neg_color (string): Color of rectangles with negative signed area (default is "red").
+    axis_width (float): The width of the cartesian axes (default is 2).
+    axis_color (string): The color of the cartesian axes (default is "lightslategray").
   '''
   # check that a < b
   if a >= b:
@@ -195,6 +198,10 @@ def make_figure(f, a, b, mode,
 
   for i in range(max_N):
     fig['layout']['sliders'][0]['steps'][i]['label']=f"{Ns[i]}"
+
+  # plot x and y axes
+  fig.update_xaxes(zeroline = True, zerolinewidth = axis_width, zerolinecolor = axis_color)
+  fig.update_yaxes(zeroline = True, zerolinewidth = axis_width, zerolinecolor = axis_color)
 
   # save figure or display
   if save_figure:
