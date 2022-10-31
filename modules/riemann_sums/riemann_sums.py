@@ -1,5 +1,6 @@
 import numpy as np
 import plotly.graph_objects as go
+import os
 
 def get_corners_of_ith_rectangle(f, a, b, i, N, mode):
   '''
@@ -205,6 +206,9 @@ def make_figure(f, a, b, mode,
 
   # save figure or display
   if save_figure:
+    cwd = os.getcwd()
+    print(cwd)
+    print("figure saved to " + os.path.join(cwd, filename))
     fig.write_html(filename)
   else:
     fig.show()

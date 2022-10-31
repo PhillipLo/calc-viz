@@ -1,5 +1,6 @@
 import numpy as np
 import plotly.graph_objects as go
+import os
 
 def secant_line(f, a, h):
   '''
@@ -236,7 +237,11 @@ def make_figure(f, a, x_min, x_max,
 
   # save figure or display
   if save_figure:
+    cwd = os.getcwd()
+    print(cwd)
+    print("figure saved to " + os.path.join(cwd, filename))
     fig.write_html(filename)
+
   else:
     fig.show()
       
