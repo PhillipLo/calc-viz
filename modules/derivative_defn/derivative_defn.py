@@ -49,7 +49,7 @@ def tangent_line(f, a, delta = 1e-6):
   return l, m
 
 def make_figure(f, a, x_min, x_max, 
-  save_figure = False, filename = "secant_line.html",
+  save_figure = False, filename = "derivative_defn.html",
   square_aspect = True, tangent_line_always_visible = True,
   num_h = 100, num_x = 100,
   x_margin_ratio = 0.1, y_margin_ratio = 0.1,
@@ -78,7 +78,8 @@ def make_figure(f, a, x_min, x_max,
     x_max (float): The right boundary of the domain where we want to compute things.
     save_figure (boolean): Saves figure as html if True, displays inline if false (default is 
       False).
-    filename (string): Filename for saved plot if save_figure == True (default is secant_line.html)
+    filename (string): Filename for saved plot if save_figure == True (default is 
+      derivative_defn.html)
     square_aspect (boolean): Whether or not to enforce a square aspect ratio for the plot; 
       recommended set to False if function over [x_min, x_max] has a particularly tall aspect ratio.
     tangent_line_always_visible (boolean): Tangent line always on if True, otherwise toggled off by
