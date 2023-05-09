@@ -5,6 +5,7 @@ dependencies:
   - python=3.9
   - matplotlib
   - pip
+  - scipy
   - pip:
     - plotly==5.10.0
     - ipykernel

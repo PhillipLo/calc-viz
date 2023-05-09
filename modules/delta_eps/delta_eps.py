@@ -11,7 +11,7 @@ def compute_delta(f, a, L, eps, x_min, x_max, delta_stepsize = 1e-5):
     the minumum of the leftmost and rightmost step from a.  
 
   Args:
-    f (callable (x)): The function itself. Input and output must be a scalar.
+    f (callable(x)): The function itself. Input and output must be a scalar.
     a (float): The x coordinate of where we want to compute the limit.
     L (float): The limit.
     eps (float > 0): The epsilon for which we want to find a delta.
